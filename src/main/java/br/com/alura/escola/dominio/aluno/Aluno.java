@@ -19,11 +19,14 @@ public class Aluno {
     }
 
     public void adicionarTelefone(String ddd, String numero) {
+        if (telefones.size() == 2) {
+            throw new IllegalArgumentException("Não é possível inserir mais do que 2 telefones");
+        }
         this.telefones.add(new Telefone(ddd, numero));
     }
 
-    public String getCpf() {
-        return cpf.getNumero();
+    public CPF getCpf() {
+        return cpf;
     }
 
     public String getNome() {
@@ -37,4 +40,5 @@ public class Aluno {
     public List<Telefone> getTelefones() {
         return telefones;
     }
+
 }

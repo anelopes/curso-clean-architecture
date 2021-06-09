@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class TelefoneTest {
+public class TelefoneTest {
 
     @Test
     public void naoDeveriaCriarTelefonesComDDDInvalidos() {

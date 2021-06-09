@@ -22,7 +22,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
         try {
             String sql = "INSERT INTO ALUNO VALUES (?, ?, ?)";
             PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, aluno.getCpf());
+            ps.setString(1, aluno.getCpf().toString());
             ps.setString(2, aluno.getNome());
             ps.setString(3, aluno.getEmail());
             ps.execute();
@@ -55,7 +55,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
                     .comNomeCPFEmail(rs.getString("nome"), cpf.getNumero(), rs.getString("email"))
                     .criar();
 
-            Long id = rs.getLong("id");
+            long id = rs.getLong("id");
 
             sql = "SELECT ddd, numero FROM TELEFONE WHERE aluno_id = ?";
             ps = connection.prepareStatement(sql);
@@ -83,7 +83,7 @@ public class RepositorioDeAlunosComJDBC implements RepositorioDeAlunos {
                         .comNomeCPFEmail(rs.getString("NOME"), rs.getString("CPF"), rs.getString("EMAIL"))
                         .criar();
 
-                Long id = rs.getLong("id");
+                long id = rs.getLong("id");
 
                 sql = "SELECT ddd, numero FROM TELEFONE WHERE aluno_id = ?";
                 PreparedStatement psTelefone = connection.prepareStatement(sql);

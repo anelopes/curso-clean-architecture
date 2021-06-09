@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class EmailTest {
+public class EmailTest {
 
     @Test
     public void naoDeveriaCriarEmailsComEnderecosInvalidos() {
